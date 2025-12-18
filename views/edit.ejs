@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css"> 
     <title>Edit Post - <%= post.title %></title>
 </head>
 <body>
-    <h1>Edit Post: <%= post.title %></h1>
-    
-    <form action="/update/<%= post.id %>" method="POST">
-        
-        <label for="postTitle">Post Title:</label>
-        <input type="text" id="postTitle" name="postTitle" value="<%= post.title %>" required><br><br>
-        
-        <label for="postBody">Post Content:</label>
-        <textarea id="postBody" name="postBody" rows="10" required><%= post.body %></textarea><br><br>
-        
-        <button type="submit">Update Post</button>
-    </form>
-    
+    <div class="container">
+        <header>
+            <a href="/" class="edit-link">← Back to Home</a>
+            <h1>Edit Post</h1>
+        </header>
+
+        <div class="blog-post">
+            <form action="/update/<%= post.id %>" method="POST" class="edit-form">
+                
+                <div class="form-group">
+                    <label for="postTitle">Post Title</label>
+                    <input type="text" id="postTitle" name="postTitle" value="<%= post.title %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postBody">Post Content</label>
+                    <textarea id="postBody" name="postBody" rows="12" required><%= post.body %></textarea>
+                </div>
+                
+                <div class="post-actions">
+                    <button type="submit" class="create-btn">Update Post</button>
+                    <a href="/" class="delete-btn" style="text-decoration: none;">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Copyright © <%= new Date().getFullYear() %> | Hardik Bajpai</p>
+        </footer>
+    </div>
 </body>
 </html>

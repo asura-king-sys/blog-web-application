@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Create New Post</title>
 </head>
 <body>
-    <h1>New Blog Post</h1>
-    
-    <form action="/submit-post" method="POST">
-        
-        <label for="postTitle">Title:</label>
-        <input type="text" id="postTitle" name="postTitle" required><br><br>
-        
-        <label for="postBody">Content:</label>
-        <textarea id="postBody" name="postBody" required></textarea><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
-    
+    <div class="container">
+        <header>
+            <a href="/" class="edit-link">← Back to Home</a>
+            <h1>Create New Blog Post</h1>
+        </header>
+
+        <div class="blog-post">
+            <form action="/submit-post" method="POST" class="edit-form">
+                
+                <div class="form-group">
+                    <label for="postTitle">Post Title</label>
+                    <input type="text" id="postTitle" name="postTitle" placeholder="Enter a catchy title..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postBody">Content</label>
+                    <textarea id="postBody" name="postBody" rows="12" placeholder="Write your thoughts here..." required></textarea>
+                </div>
+                
+                <div class="post-actions">
+                    <button type="submit" class="create-btn">Publish Post</button>
+                    <a href="/" class="delete-btn" style="text-decoration: none;">Discard</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Copyright © <%= new Date().getFullYear() %> | Hardik Bajpai</p>
+        </footer>
+    </div>
 </body>
 </html>

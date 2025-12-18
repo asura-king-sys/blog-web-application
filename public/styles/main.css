@@ -1,0 +1,145 @@
+/* 1. Global Styles & Typography */
+:root {
+    --primary-blue: #0078d4; /* Microsoft Official Blue */
+    --bg-color: #f3f2f1;
+    --card-bg: #ffffff;
+    --text-main: #323130;
+    --text-secondary: #605e5c;
+    --danger: #d13438;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Header & Layout */
+h1 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* 3. Action Button (Create Post) */
+.create-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-bottom: 20px;
+}
+
+.create-btn:hover {
+    background-color: #005a9e;
+}
+
+/* 4. Blog Post Cards */
+.blog-post {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--primary-blue);
+}
+
+.blog-post h2 {
+    margin-top: 0;
+    color: var(--text-main);
+}
+
+.blog-post p {
+    color: var(--text-secondary);
+}
+
+/* 5. Post Actions (Edit/Delete) */
+.post-actions {
+    margin-top: 15px;
+    border-top: 1px solid #edebe9;
+    padding-top: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.edit-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    color: var(--danger) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+/* 6. Form Specific Styles */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box; /* Crucial for padding */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Microsoft-style focus state */
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+
+textarea {
+    resize: vertical; /* Allows user to grow box but not width */
+}
+
+header {
+    width: 100%;
+    margin-bottom: 20px;
+}
